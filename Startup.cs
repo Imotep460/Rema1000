@@ -34,6 +34,8 @@ namespace Rema1000
             services.AddControllers();
             services.AddDbContext<DbContextRema1000>(opt =>
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<IService<Product>, ProductSqlService>();
+            services.AddScoped<IProductCategoryRead<Product>, ProductSqlService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Rema1000", Version = "v1" });
