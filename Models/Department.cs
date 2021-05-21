@@ -12,6 +12,6 @@ namespace Rema1000.Models
         [Key]
         public Guid DepartmentID { get; set; }
         [Required]
-        public string DepartmentName { get; set; } // the name of the department (ie: Meats, Dairy etc).
+        public string DepartmentName { get; set; } // The name of the department (ie: Meats, Dairy etc).
     }
 }
