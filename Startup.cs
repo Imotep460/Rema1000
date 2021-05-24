@@ -38,6 +38,7 @@ namespace Rema1000
             services.AddScoped<IProductCategoryRead<Product>, ProductSqlService>();
             services.AddScoped<IProductCategoryRead<ProductCategory>, ProductCategorySqlService>();
             services.AddScoped<IService<ProductCategory>, ProductCategorySqlService>();
+            services.AddScoped<IService<Supplier>, SupplierSqlService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Rema1000", Version = "v1" });
