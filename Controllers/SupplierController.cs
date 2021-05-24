@@ -9,6 +9,9 @@ using Rema1000.Services;
 
 namespace Rema1000.Controllers
 {
+    /// <summary>
+    /// Controller responsible for handling the Suppliers.
+    /// </summary>
     [ApiController]
     [Route("api/[controller]")]
     public class SupplierController : ControllerBase
