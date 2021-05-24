@@ -32,10 +32,10 @@ namespace Rema1000.Services
         }
 
         /// <summary>
-        /// 
+        /// Attempts to get a specific Supplier via a input Guid.
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns>Return a Supplier object.</returns>
+        /// <param name="id">The Guid of the Supplier being searched for.</param>
+        /// <returns>Returns a Supplier object. The returned Supplier is Blank if no Supplier has the input Guid value.</returns>
         public Supplier Read(Guid id)
         {
             foreach (Supplier supplier in _mockDb)
@@ -45,6 +45,7 @@ namespace Rema1000.Services
                     return supplier;
                 }
             }
+            // If there is no supplier with the input id create and return a new blank supplier.
             return new Supplier();
         }
 
