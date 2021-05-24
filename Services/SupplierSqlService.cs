@@ -7,6 +7,9 @@ using Rema1000.Models;
 
 namespace Rema1000.Services
 {
+    /// <summary>
+    /// Use the DbContext to create a Mock database for the suppliers.
+    /// </summary>
     public class SupplierSqlService : IService<Supplier>
     {
         private readonly DbContextRema1000 _dbContextRema1000;
@@ -28,6 +31,11 @@ namespace Rema1000.Services
             return supplier;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Return a Supplier object.</returns>
         public Supplier Read(Guid id)
         {
             foreach (Supplier supplier in _mockDb)
@@ -40,11 +48,22 @@ namespace Rema1000.Services
             return new Supplier();
         }
 
+
+        /// <summary>
+        /// Get the _mockDb database.
+        /// </summary>
+        /// <returns></returns>
         public List<Supplier> Read()
         {
             return _mockDb;
         }
 
+        /// <summary>
+        /// Updates a already existing Supplier in the database.
+        /// </summary>
+        /// <param name="id">The Guid of the Supplier being updates.</param>
+        /// <param name="supplier">The new supplier data.</param>
+        /// <returns>Return true on success else return false.</returns>
         public bool Update(Guid id, Supplier supplier)
         {
             for (int i = 0; i <= _mockDb.Count(); i++)
@@ -58,6 +77,11 @@ namespace Rema1000.Services
             return false;
         }
 
+        /// <summary>
+        /// Deletes a Supplier from the _mockDb database;
+        /// </summary>
+        /// <param name="id">The Guid of the Supplier being deleted.</param>
+        /// <returns>Returns true if success else return false.</returns>
         public bool Delete(Guid id)
         {
             for (int i = 0; i <= _mockDb.Count(); i++)
