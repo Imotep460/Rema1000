@@ -53,7 +53,7 @@ namespace Rema1000.Services
         /// <summary>
         /// Get the _mockDb database.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Returns the entire _mockDb.</returns>
         public List<Supplier> Read()
         {
             return _mockDb;
